@@ -46,10 +46,14 @@ def marks_list(marks, students, courses):
             mark = next((m["mark"] for m in marks if m["student_id"] == students[j]["id"] and m["course_id"] == courses[i]["id"]), None)
             print(f"Student: {students[j]['name']}, Mark: {mark}")
 
-students = input_students()
-courses = input_courses()
-list_student(students)
-list_course(courses)
-marks = marks(students, courses)
-marks_list(marks, students, courses)
+def main():
+    students = input_students()
+    courses = input_courses()
+    list_student(students)
+    list_course(courses)
+    student_marks = marks(students, courses)
+    marks_list(student_marks, students, courses)
 
+
+if __name__ == "__main__":
+    main()
